@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{cafe.name}}</title>
+  </head>
+  <body>
+    <h1>{{cafe.name}}</h1>
+    <h3>{{cafe.location}}, London</h3>
+    <img src="{{cafe.img_url}}" alt="coffee shop" width="350" height="350" />
+
+    <h4>
+      <a href="{{cafe.map_url}}" target="_blank">Google map</a>
+    </h4>
+
+    <h4>Details:</h4>
+    <ul>
+      <li>Has sockets: {{cafe.has_sockets}}</li>
+      <li>Has toilet: {{cafe.has_toilet}}</li>
+      <li>Has WiFi?: {{cafe.has_wifi}}</li>
+      <li>Can take calls: {{cafe.can_take_calls}}</li>
+      <li>Number of seats: {{cafe.seats}}</li>
+      <li>Coffee price: {{cafe.coffee_price}}</li>
+    </ul>
+
+    <p><a href="{{url_for('cafes_list')}}">Return to list of Cafes</a></p>
+  </body>
+</html>

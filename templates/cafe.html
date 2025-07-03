@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner bg-faded text-center rounded">
+          <h2 class="section-heading mb-5">
+            <span class="section-heading-upper">{{cafe.location}}</span>
+            <span class="section-heading-lower">{{cafe.name}}</span>
+          </h2>
+          <img
+            src="{{cafe.img_url}}"
+            alt="coffee shop"
+            width="640"
+            height="480"
+          />
+          <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Has Sockets
+              <span class="ms-auto">{{cafe.has_sockets}}</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Has Toilets
+              <span class="ms-auto"> {{cafe.has_toilet}}</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Has Wi-Fi
+              <span class="ms-auto">{{cafe.has_wifi}}</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Can Take Calls
+              <span class="ms-auto">{{cafe.can_take_calls}}</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Number of Seats
+              <span class="ms-auto">{{cafe.seats}}</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Coffee Price
+              <span class="ms-auto">{{cafe.coffee_price}}</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Google Map
+              <span class="ms-auto"
+                ><a href="{{cafe.map_url}}" target="_blank">Link</a></span
+              >
+            </li>
+          </ul>
+          <p class="address mb-5">
+            <em>
+              <strong>555 Street</strong>
+              <br />
+              City, State
+            </em>
+          </p>
+          <p class="mb-0">
+            <small><em>Telephone Number</em></small>
+            <br />
+            (555) 555-5555
+          </p>
+
+          <p><a href="{{url_for('edit_cafe', id=cafe.id)}}">Edit Cafe</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

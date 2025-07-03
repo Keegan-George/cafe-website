@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafes</title>
+  </head>
+  <h1>Cafes</h1>
+
+  <ul>
+    {% for cafe in cafes %}
+    <li>
+      <a href="{{url_for('view_cafe', id=cafe.id)}}">{{cafe.name}}</a> |
+      <a href="{{url_for('edit_cafe', id=cafe.id)}}">Edit</a> |
+      <a href="{{url_for('delete_cafe', id=cafe.id)}}">Delete</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="{{url_for('add_cafe')}}">Add cafe</a></p>
+
+  <p><a href="{{url_for('home')}}">Return to Home page</a></p>
+  <body></body>
+</html>

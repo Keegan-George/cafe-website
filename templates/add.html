@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% if is_edit %}
+    <title>Edit Cafe</title>
+    {% else %}
+    <title>Add Cafe</title>
+    {% endif %}
+  </head>
+
+  <body>
+    {% if is_edit %}
+    <h1>Edit Cafe</h1>
+    {% else %}
+    <h1>Add Cafe</h1>
+    {% endif %} {% if form.errors %}
+    <ul class="errors">
+      {% for field, error in form.errors.items() %}
+      <li>{{field}}: {{','.join(error)}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form method="POST">
+      {{form.csrf_token}}
+      <p>{{form.name.label}} {{form.name(size=30)}}</p>
+      <p>{{form.map_url.label}} {{form.map_url(size=30)}}</p>
+      <p>{{form.img_url.label}} {{form.img_url(size=30)}}</p>
+      <p>{{form.location.label}} {{form.location(size=30)}}</p>
+      <p>{{form.has_sockets.label}} {{form.has_sockets()}}</p>
+      <p>{{form.has_toilet.label}} {{form.has_toilet()}}</p>
+      <p>{{form.has_wifi.label}} {{form.has_wifi()}}</p>
+      <p>{{form.can_take_calls.label}} {{form.can_take_calls()}}</p>
+      <p>{{form.seats.label}} {{form.seats(size=5)}}</p>
+      <p>{{form.coffee_price.label}} {{form.coffee_price(size=5)}}</p>
+      <p>{{form.submit()}}</p>
+    </form>
+
+    {% if is_edit %}
+    <br><br><br><br><br><br>
+      <a href="{{url_for('delete_cafe', id=cafe.id)}}">Delete Cafe</a>
+    {% endif %}
+  </body>
+</html>

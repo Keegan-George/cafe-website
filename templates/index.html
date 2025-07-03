@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{url_for('static', filename='assets/img/intro.jpg')}}" alt="..." />
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">The Coffee Shops</span>
+                    <span class="section-heading-lower">Worth Visiting!</span>
+                </h2>
+                <p class="mb-3">Ever wondered where are the best spots to grab a fresh coffee? Which cafes have the most outlets or available? Welcome to World Cafe Reviewer. With insights into coffee shops from around the globe. </p>
+                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Our Promise</span>
+                        <span class="section-heading-lower">To You</span>
+                    </h2>
+                    <p class="mb-0">When you walk into one of our reviewed coffee shops know that we are dedicated to providing you with the most accurate and up to date information on all our shops. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+{% endblock %}
