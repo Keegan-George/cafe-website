@@ -1,6 +1,4 @@
-{% extends 'base.html' %} 
-
-{% block body %}
+{% extends 'base.html' %} {% block body %}
 <section class="page-section about-heading">
   <div class="container">
     <img
@@ -11,16 +9,28 @@
     <div class="about-heading-content">
       <div class="row">
         <div class="col-xl-9 col-lg-10 mx-auto">
-          <p><a href="{{url_for('add_cafe')}}" class="btn btn-primary mb-3">➕Add Cafe</a></p>
+          <p>
+            <a href="{{url_for('add_cafe')}}" class="btn btn-primary mb-3"
+              >➕Add Cafe</a
+            >
+          </p>
           {% for cafe in cafes %}
           <div class="bg-faded rounded p-4 my-4">
             <h2 class="section-heading mb-2">
               <span class="section-heading-upper">{{cafe.location}}</span>
               <span class="section-heading-lower"
-                ><a href="{{url_for('view_cafe', id=cafe.id)}}" style="text-decoration: none; color: inherit;"
+                ><a
+                  href="{{url_for('view_cafe', id=cafe.id)}}"
+                  style="text-decoration: none; color: inherit"
                   >{{cafe.name}}</a
                 ></span
               >
+              <img
+                src="{{cafe.img_url}}"
+                alt="{{cafe.name}}"
+                class="img-thumbnail mb-3"
+                style="max-width: 200px"
+              />
             </h2>
             <p>
               <a href="{{cafe.map_url}}" target="_blank">Map</a>
