@@ -71,6 +71,6 @@ def edit_cafe(id):
         cafe_to_edit.seats = form.seats.data
         cafe_to_edit.coffee_price = form.coffee_price.data
         db.session.commit()
-        return redirect(url_for("view_cafe", id=cafe_to_edit.id))
+        return redirect(url_for("view.view_cafe", id=cafe_to_edit.id))
 
     return render_template("add.html", form=form, is_edit=True, cafe=cafe_to_edit)

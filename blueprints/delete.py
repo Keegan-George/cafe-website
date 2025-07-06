@@ -10,4 +10,4 @@ def delete_cafe(id):
     cafe_to_delete: Cafe = db.get_or_404(entity=Cafe, ident=id)
     db.session.delete(cafe_to_delete)
     db.session.commit()
-    return redirect(url_for("cafes_list"))
+    return redirect(url_for("view.cafes_list"))
