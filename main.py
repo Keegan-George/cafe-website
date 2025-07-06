@@ -2,6 +2,7 @@ from os import urandom
 from flask import Flask, render_template, redirect, url_for
 from cafe_form import CafeForm
 from models import db, Cafe
+from blueprints.view import view_bp
 from blueprints.delete import delete_bp
 
 
@@ -21,23 +22,6 @@ db.init_app(app)
 # create table schema in the database
 with app.app_context():
     db.create_all()
-
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/cafes")
-def cafes_list():
-    cafes = db.session.execute(db.select(Cafe).order_by(Cafe.id.desc())).scalars()
-    return render_template("cafes.html", cafes=cafes)
-
-
-@app.route("/cafe/<int:id>")
-def view_cafe(id):
-    cafe: Cafe = db.get_or_404(entity=Cafe, ident=id)
-    return render_template("cafe.html", cafe=cafe)
 
 
 @app.route("/cafes/add", methods=["GET", "POST"])
@@ -112,7 +96,8 @@ def edit_cafe(id):
     return render_template("add.html", form=form, is_edit=True, cafe=cafe_to_edit)
 
 
-app.register_blueprint(delete_bp, url_prefix="/delete")
+app.register_blueprint(view_bp)
+app.register_blueprint(delete_bp)
 
 
 if __name__ == "__main__":
