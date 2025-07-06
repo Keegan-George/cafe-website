@@ -50,11 +50,6 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/products")
-def products():
-    return render_template("products.html")
-
-
 @app.route("/cafes")
 def cafes_list():
     cafes = db.session.execute(db.select(Cafe).order_by(Cafe.id.desc())).scalars()
