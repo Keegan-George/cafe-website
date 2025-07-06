@@ -57,7 +57,7 @@ def products():
 
 @app.route("/cafes")
 def cafes_list():
-    cafes = db.session.execute(db.select(Cafe).order_by(Cafe.id)).scalars()
+    cafes = db.session.execute(db.select(Cafe).order_by(Cafe.id.desc())).scalars()
     return render_template("cafes.html", cafes=cafes)
 
 
