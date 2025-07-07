@@ -36,7 +36,7 @@ def add_cafe():
         db.session.add(new_cafe)
         db.session.commit()
 
-        return redirect(url_for("cafes_list"))
+        return redirect(url_for("view.cafes_list"))
 
     return render_template("add.html", form=form)
 
