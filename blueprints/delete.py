@@ -1,5 +1,6 @@
 from flask import Blueprint, redirect, url_for
-from models import db, Cafe
+from models import Cafe
+from extensions import db
 
 
 delete_bp = Blueprint("delete", __name__)

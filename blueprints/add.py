@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for
-from models import db, Cafe
+from models import Cafe
 from cafe_form import CafeForm
+from extensions import db
 
 add_bp = Blueprint("add", __name__)
 

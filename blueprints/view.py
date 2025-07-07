@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
-from models import db, Cafe
+from models import Cafe
+from extensions import db
 
 view_bp = Blueprint("view", __name__)
 
