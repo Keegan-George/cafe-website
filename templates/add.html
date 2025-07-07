@@ -27,9 +27,9 @@
     <form method="POST">
       {{form.csrf_token}}
       <p>{{form.name.label}} {{form.name(size=30)}}</p>
+      <p>{{form.location.label}} {{form.location(size=30)}}</p>
       <p>{{form.map_url.label}} {{form.map_url(size=30)}}</p>
       <p>{{form.img_url.label}} {{form.img_url(size=30)}}</p>
-      <p>{{form.location.label}} {{form.location(size=30)}}</p>
       <p>{{form.has_sockets.label}} {{form.has_sockets()}}</p>
       <p>{{form.has_toilet.label}} {{form.has_toilet()}}</p>
       <p>{{form.has_wifi.label}} {{form.has_wifi()}}</p>
